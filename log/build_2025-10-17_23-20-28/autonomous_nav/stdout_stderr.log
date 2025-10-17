@@ -1,0 +1,24 @@
+running egg_info
+writing ../build/autonomous_nav/autonomous_nav.egg-info/PKG-INFO
+writing dependency_links to ../build/autonomous_nav/autonomous_nav.egg-info/dependency_links.txt
+writing entry points to ../build/autonomous_nav/autonomous_nav.egg-info/entry_points.txt
+writing requirements to ../build/autonomous_nav/autonomous_nav.egg-info/requires.txt
+writing top-level names to ../build/autonomous_nav/autonomous_nav.egg-info/top_level.txt
+reading manifest file '../build/autonomous_nav/autonomous_nav.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../build/autonomous_nav/autonomous_nav.egg-info/SOURCES.txt'
+running build
+running build_py
+copying autonomous_nav/hs_waypoint_follower.py -> /home/student/irslab_ws/src/IRS_2025_Group_4/build/autonomous_nav/build/lib/autonomous_nav
+running install
+running install_lib
+copying /home/student/irslab_ws/src/IRS_2025_Group_4/build/autonomous_nav/build/lib/autonomous_nav/hs_waypoint_follower.py -> /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/lib/python3.10/site-packages/autonomous_nav
+byte-compiling /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/lib/python3.10/site-packages/autonomous_nav/hs_waypoint_follower.py to hs_waypoint_follower.cpython-310.pyc
+Sorry: IndentationError: expected an indented block after 'try' statement on line 185 (hs_waypoint_follower.py, line 186)
+running install_data
+running install_egg_info
+removing '/home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/lib/python3.10/site-packages/autonomous_nav-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../build/autonomous_nav/autonomous_nav.egg-info to /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/lib/python3.10/site-packages/autonomous_nav-0.0.0-py3.10.egg-info
+running install_scripts
+Installing hs_waypoint_follower script to /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/lib/autonomous_nav
+writing list of installed files to '/home/student/irslab_ws/src/IRS_2025_Group_4/build/autonomous_nav/install.log'

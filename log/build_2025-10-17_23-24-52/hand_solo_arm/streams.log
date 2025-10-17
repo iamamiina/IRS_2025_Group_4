@@ -1,0 +1,21 @@
+[1.508s] Invoking command in '/home/student/irslab_ws/src/IRS_2025_Group_4/hand_solo_arm': PYTHONPATH=/home/student/irslab_ws/src/IRS_2025_Group_4/build/hand_solo_arm/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/irslab_ws/src/IRS_2025_Group_4/install/hand_solo_arm/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/hand_solo_arm build --build-base /home/student/irslab_ws/src/IRS_2025_Group_4/build/hand_solo_arm/build install --record /home/student/irslab_ws/src/IRS_2025_Group_4/build/hand_solo_arm/install.log --single-version-externally-managed install_data
+[1.784s] running egg_info
+[1.786s] writing ../build/hand_solo_arm/hand_solo_arm.egg-info/PKG-INFO
+[1.786s] writing dependency_links to ../build/hand_solo_arm/hand_solo_arm.egg-info/dependency_links.txt
+[1.786s] writing entry points to ../build/hand_solo_arm/hand_solo_arm.egg-info/entry_points.txt
+[1.786s] writing requirements to ../build/hand_solo_arm/hand_solo_arm.egg-info/requires.txt
+[1.786s] writing top-level names to ../build/hand_solo_arm/hand_solo_arm.egg-info/top_level.txt
+[1.788s] reading manifest file '../build/hand_solo_arm/hand_solo_arm.egg-info/SOURCES.txt'
+[1.789s] writing manifest file '../build/hand_solo_arm/hand_solo_arm.egg-info/SOURCES.txt'
+[1.789s] running build
+[1.789s] running build_py
+[1.789s] running install
+[1.790s] running install_lib
+[1.791s] running install_data
+[1.791s] running install_egg_info
+[1.792s] removing '/home/student/irslab_ws/src/IRS_2025_Group_4/install/hand_solo_arm/lib/python3.10/site-packages/hand_solo_arm-0.0.0-py3.10.egg-info' (and everything under it)
+[1.793s] Copying ../build/hand_solo_arm/hand_solo_arm.egg-info to /home/student/irslab_ws/src/IRS_2025_Group_4/install/hand_solo_arm/lib/python3.10/site-packages/hand_solo_arm-0.0.0-py3.10.egg-info
+[1.793s] running install_scripts
+[1.817s] Installing hs_pick_place script to /home/student/irslab_ws/src/IRS_2025_Group_4/install/hand_solo_arm/lib/hand_solo_arm
+[1.818s] writing list of installed files to '/home/student/irslab_ws/src/IRS_2025_Group_4/build/hand_solo_arm/install.log'
+[1.882s] Invoked command in '/home/student/irslab_ws/src/IRS_2025_Group_4/hand_solo_arm' returned '0': PYTHONPATH=/home/student/irslab_ws/src/IRS_2025_Group_4/build/hand_solo_arm/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/irslab_ws/src/IRS_2025_Group_4/install/hand_solo_arm/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/hand_solo_arm build --build-base /home/student/irslab_ws/src/IRS_2025_Group_4/build/hand_solo_arm/build install --record /home/student/irslab_ws/src/IRS_2025_Group_4/build/hand_solo_arm/install.log --single-version-externally-managed install_data

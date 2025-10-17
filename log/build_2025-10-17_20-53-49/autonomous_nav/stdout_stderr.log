@@ -1,0 +1,53 @@
+running egg_info
+creating ../build/autonomous_nav/autonomous_nav.egg-info
+writing ../build/autonomous_nav/autonomous_nav.egg-info/PKG-INFO
+writing dependency_links to ../build/autonomous_nav/autonomous_nav.egg-info/dependency_links.txt
+writing entry points to ../build/autonomous_nav/autonomous_nav.egg-info/entry_points.txt
+writing requirements to ../build/autonomous_nav/autonomous_nav.egg-info/requires.txt
+writing top-level names to ../build/autonomous_nav/autonomous_nav.egg-info/top_level.txt
+writing manifest file '../build/autonomous_nav/autonomous_nav.egg-info/SOURCES.txt'
+reading manifest file '../build/autonomous_nav/autonomous_nav.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../build/autonomous_nav/autonomous_nav.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/student/irslab_ws/src/IRS_2025_Group_4/build/autonomous_nav/build
+creating /home/student/irslab_ws/src/IRS_2025_Group_4/build/autonomous_nav/build/lib
+creating /home/student/irslab_ws/src/IRS_2025_Group_4/build/autonomous_nav/build/lib/autonomous_nav
+copying autonomous_nav/hs_waypoint_follower.py -> /home/student/irslab_ws/src/IRS_2025_Group_4/build/autonomous_nav/build/lib/autonomous_nav
+copying autonomous_nav/__init__.py -> /home/student/irslab_ws/src/IRS_2025_Group_4/build/autonomous_nav/build/lib/autonomous_nav
+running install
+running install_lib
+creating /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/lib/python3.10/site-packages/autonomous_nav
+copying /home/student/irslab_ws/src/IRS_2025_Group_4/build/autonomous_nav/build/lib/autonomous_nav/hs_waypoint_follower.py -> /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/lib/python3.10/site-packages/autonomous_nav
+copying /home/student/irslab_ws/src/IRS_2025_Group_4/build/autonomous_nav/build/lib/autonomous_nav/__init__.py -> /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/lib/python3.10/site-packages/autonomous_nav
+byte-compiling /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/lib/python3.10/site-packages/autonomous_nav/hs_waypoint_follower.py to hs_waypoint_follower.cpython-310.pyc
+  File "/home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/lib/python3.10/site-packages/autonomous_nav/hs_waypoint_follower.py", line 194
+    	node.get_logged().warn('No weight message recieved)
+    	                       ^
+SyntaxError: unterminated string literal (detected at line 194)
+
+byte-compiling /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/lib/python3.10/site-packages/autonomous_nav/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/share/ament_index
+creating /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/share/ament_index/resource_index
+creating /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/share/ament_index/resource_index/packages
+copying resource/autonomous_nav -> /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/share/ament_index/resource_index/packages
+copying package.xml -> /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/share/autonomous_nav
+creating /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/share/autonomous_nav/launch
+copying launch/nav_launch.py -> /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/share/autonomous_nav/launch
+copying launch/mapping_launch.py -> /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/share/autonomous_nav/launch
+creating /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/share/autonomous_nav/config
+copying config/pa_slam_params.yaml -> /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/share/autonomous_nav/config
+copying config/pa_nav2_params.yaml -> /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/share/autonomous_nav/config
+creating /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/share/autonomous_nav/rviz
+copying rviz/pa_rviz_nav2.rviz -> /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/share/autonomous_nav/rviz
+copying rviz/pa_rviz_mapping.rviz -> /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/share/autonomous_nav/rviz
+creating /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/share/autonomous_nav/map
+copying map/pa_warehouse_map_02.pgm -> /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/share/autonomous_nav/map
+copying map/pa_warehouse_map_02.yaml -> /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/share/autonomous_nav/map
+running install_egg_info
+Copying ../build/autonomous_nav/autonomous_nav.egg-info to /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/lib/python3.10/site-packages/autonomous_nav-0.0.0-py3.10.egg-info
+running install_scripts
+Installing hs_waypoint_follower script to /home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/lib/autonomous_nav
+writing list of installed files to '/home/student/irslab_ws/src/IRS_2025_Group_4/build/autonomous_nav/install.log'
