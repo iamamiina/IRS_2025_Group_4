@@ -1,5 +1,0 @@
-  File "/home/student/irslab_ws/src/IRS_2025_Group_4/install/autonomous_nav/lib/python3.10/site-packages/autonomous_nav/hs_waypoint_follower.py", line 194
-    	node.get_logged().warn('No weight message recieved)
-    	                       ^
-SyntaxError: unterminated string literal (detected at line 194)
-

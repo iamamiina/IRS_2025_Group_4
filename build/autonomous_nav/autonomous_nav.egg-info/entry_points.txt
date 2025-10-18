@@ -1,3 +1,0 @@
-[console_scripts]
-hs_waypoint_follower = autonomous_nav.hs_waypoint_follower:main
-

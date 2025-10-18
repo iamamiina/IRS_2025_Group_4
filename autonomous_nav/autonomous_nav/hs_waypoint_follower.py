@@ -13,7 +13,7 @@ from moveit_msgs.action import MoveGroup
 from moveit_msgs.msg import MotionPlanRequest, Constraints, JointConstraint
 
 
-# --- Helper: build PoseStamped for Nav2 ---
+# -- Helper function: build PoseStamped for Nav2 ---
 def make_pose(x: float, y: float, yaw: float) -> PoseStamped:
     ps = PoseStamped()
     ps.header.frame_id = 'map'
@@ -26,7 +26,7 @@ def make_pose(x: float, y: float, yaw: float) -> PoseStamped:
     return ps
 
 
-# --- MoveIt arm controller + HMI subscriber node ---
+# --- MoveIt arm controller and HMI subscriber
 class HSWaypointRunner(Node):
     JOINT_NAMES: List[str] = ['joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6']
     PLANNING_GROUP: str = 'tmr_arm'
@@ -44,11 +44,11 @@ class HSWaypointRunner(Node):
         self.last_hmi_msg = None
         self.create_subscription(String, '/hmi/unified_status', self.hmi_callback, 10)
 
-    # --- Callback for HMI messages ---
+    #  Callback for HMI messages 
     def hmi_callback(self, msg):
         self.last_hmi_msg = msg
 
-    # --- Get box weight from last received HMI message ---
+    #  Get box weight from the last HMI message 
     def get_box_weight(self):
         if self.last_hmi_msg is None:
             self.get_logger().warn('No HMI message received yet.')
@@ -57,7 +57,7 @@ class HSWaypointRunner(Node):
         try:
             data = json.loads(self.last_hmi_msg.data)
             weight_str = data.get("box", {}).get("weight_raw", "")
-            weight_str = re.sub(r'^[^\d]*', '', weight_str)  # remove leading ": " or junk
+            weight_str = re.sub(r'^[^\d]*', '', weight_str)  # remove characters
             match = re.search(r'[\d\.]+', weight_str)
             if match:
                 weight = float(match.group())
@@ -118,18 +118,18 @@ def main(args=None):
     client = ActionClient(nav_node, NavigateToPose, 'navigate_to_pose')
 
     # Arm poses
-    POSE_BIG_BOX = [-0.3665, 0.6109, 0.8727, 1.1519, 0.0, 0.0]
+    POSE_BIG_BOX = [-0.3665, 0.6109, 0.8727, 1.5358, 0.0, 0.0]
     POSE_MED_BOX = [0.4712, 0.3665, 1.3613, 1.5358, 0.0, 0.0]
     POSE_SMALL_BOX = [1.1170, 0.8552, 0.8377, 1.5358, 0.0, 0.0]
-
+    
     # Waypoints forward
-    wp1 = make_pose(2.77, -0.465, 0.0)
+    wp1 = make_pose(2.77, -0.465, 0.1)
     wp2 = make_pose(5.36, 2.98, -0.7)
     wp3 = make_pose(13.4, 0.906, 0.0)
     wp4 = make_pose(28.1, 5.18, -0.8)
     wp5 = make_pose(30.6, -4.35, -1.6)
 
-    # Waypoints backward (opposite orientation)
+    # Waypoints backward 
     wp5_return = make_pose(30.6, -4.35, 1.54)
     wp4_return = make_pose(28.1, 5.18, 2.34)
     wp3_return = make_pose(13.4, 0.906, 3.14)
@@ -171,13 +171,13 @@ def main(args=None):
         return True
 
     try:
-        while True:  # Repeat indefinitely
+        while True:  # Repeat 
             # Go to waypoint 1 (pick-up location)
             send_and_wait(wp1)
             nav_node.get_logger().info('Waiting at waypoint 1...')
             time.sleep(3.0)
 
-            # --- Reset HMI message and wait for new box ---
+            #  Reset HMI message and wait for new box 
             arm_node.last_hmi_msg = None  # Reset to ignore old messages
             timeout = 10.0
             waited = 0.0
@@ -186,7 +186,7 @@ def main(args=None):
                 rclpy.spin_once(arm_node, timeout_sec=interval)
                 waited += interval
 
-            # --- Read box weight ---
+            #  Read box weight
             weight = arm_node.get_box_weight()
             if weight is None:
                 nav_node.get_logger().warn('No weight message received.')
@@ -217,16 +217,17 @@ def main(args=None):
                 nav_node.get_logger().info(f'Waiting at waypoint {i}...')
                 time.sleep(1.0)
 
-            # Final arm poses after finishing path
+            # move arm to set box down
             nav_node.get_logger().info('Moving arm to final pose 1...')
             arm_node._send_and_wait([0.0, 0.8203, 0.5585, -0.3316, 0.0, 0.0])
             time.sleep(1.0)
-
+	    
+	    # move arm back to safe position
             nav_node.get_logger().info('Moving arm to safe pose...')
             arm_node._send_and_wait([0.0, -1.2217, 1.3788, 1.5359, 0.0, 0.0])
             time.sleep(2.0)
 
-            # Go back through waypoints in reverse
+            # Go back through waypoints for return
             for i, wp in enumerate([wp5_return, wp4_return, wp3_return, wp2_return], start=5):
                 send_and_wait(wp)
                 nav_node.get_logger().info(f'Returning, waiting at waypoint {i}...')
