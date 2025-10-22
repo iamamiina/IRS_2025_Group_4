@@ -123,17 +123,15 @@ def main(args=None):
     POSE_SMALL_BOX = [1.1170, 0.8552, 0.8377, 1.5358, 0.0, 0.0]
     
     # Waypoints forward
-    wp1 = make_pose(2.77, -0.465, 0.1)
-    wp2 = make_pose(5.36, 2.98, -0.7)
-    wp3 = make_pose(13.4, 0.906, 0.0)
-    wp4 = make_pose(28.1, 5.18, -0.8)
-    wp5 = make_pose(30.6, -4.35, -1.6)
+    wp1 = make_pose(2.58, -0.545, 0.1)
+    wp2 = make_pose(3.92, 3.25, -0.7)
+    wp3 = make_pose(23.9, 3.22, 0.0)
+    wp4 = make_pose(30.6, -4.35, -1.6)
 
     # Waypoints backward 
-    wp5_return = make_pose(30.6, -4.35, 1.54)
-    wp4_return = make_pose(28.1, 5.18, 2.34)
-    wp3_return = make_pose(13.4, 0.906, 3.14)
-    wp2_return = make_pose(5.36, 2.98, 2.44)
+    wp4_return = make_pose(30.6, -4.35, 1.54)
+    wp3_return = make_pose(23.9, 3.22, 3.14)
+    wp2_return = make_pose(3.92, 3.25, 2.44)	
 
     # Helper: send nav goal
     def send_and_wait(pose: PoseStamped) -> bool:
@@ -212,10 +210,10 @@ def main(args=None):
             time.sleep(2.0)
 
             # Continue navigation through waypoints
-            for i, wp in enumerate([wp2, wp3, wp4, wp5], start=2):
+            for i, wp in enumerate([wp2, wp3, wp4], start=2):
                 send_and_wait(wp)
                 nav_node.get_logger().info(f'Waiting at waypoint {i}...')
-                time.sleep(1.0)
+                time.sleep(0.1)
 
             # move arm to set box down
             nav_node.get_logger().info('Moving arm to final pose 1...')
@@ -228,10 +226,10 @@ def main(args=None):
             time.sleep(2.0)
 
             # Go back through waypoints for return
-            for i, wp in enumerate([wp5_return, wp4_return, wp3_return, wp2_return], start=5):
+            for i, wp in enumerate([wp4_return, wp3_return, wp2_return], start=5):
                 send_and_wait(wp)
                 nav_node.get_logger().info(f'Returning, waiting at waypoint {i}...')
-                time.sleep(1.0)
+                time.sleep(0.1)
 
             nav_node.get_logger().info('Returned to start, ready for next box.')
 
